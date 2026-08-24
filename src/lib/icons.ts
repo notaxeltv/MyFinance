@@ -1,0 +1,73 @@
+import {
+  Banknote,
+  Briefcase,
+  Bus,
+  Car,
+  Circle,
+  Coins,
+  CreditCard,
+  Cpu,
+  Dumbbell,
+  Fuel,
+  Gamepad2,
+  GraduationCap,
+  Heart,
+  HeartPulse,
+  Home,
+  Landmark,
+  type LucideIcon,
+  MoreHorizontal,
+  PiggyBank,
+  Plane,
+  Popcorn,
+  Receipt,
+  RefreshCw,
+  Shirt,
+  ShoppingCart,
+  Smartphone,
+  Sparkles,
+  TrendingUp,
+  Utensils,
+  Wallet,
+  Wallet2,
+} from "lucide-react"
+
+/** Icone selezionabili per categorie e conti, identificate da una chiave stabile. */
+export const ICON_MAP: Record<string, LucideIcon> = {
+  wallet: Wallet,
+  "wallet-2": Wallet2,
+  briefcase: Briefcase,
+  coins: Coins,
+  home: Home,
+  receipt: Receipt,
+  "shopping-cart": ShoppingCart,
+  car: Car,
+  fuel: Fuel,
+  bus: Bus,
+  "heart-pulse": HeartPulse,
+  dumbbell: Dumbbell,
+  "refresh-cw": RefreshCw,
+  cpu: Cpu,
+  "gamepad-2": Gamepad2,
+  sparkles: Sparkles,
+  shirt: Shirt,
+  utensils: Utensils,
+  popcorn: Popcorn,
+  "graduation-cap": GraduationCap,
+  landmark: Landmark,
+  "more-horizontal": MoreHorizontal,
+  "credit-card": CreditCard,
+  banknote: Banknote,
+  "piggy-bank": PiggyBank,
+  smartphone: Smartphone,
+  "trending-up": TrendingUp,
+  heart: Heart,
+  plane: Plane,
+}
+
+export const ICON_NAMES = Object.keys(ICON_MAP)
+
+export function getIconComponent(name?: string | null): LucideIcon {
+  if (!name) return Circle
+  return ICON_MAP[name] ?? Circle
+}
